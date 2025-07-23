@@ -1,9 +1,9 @@
-                           /* Linear Search */
+                           /* Linear Search and find Unique Elements */
 #include <iostream>
 using namespace std;
 void search(int arr[], int x)
 {
-    int j, n;
+    int i, j, n;
     cout << "\nInput element to search: ";
     cin >> n;
     for (j = 0; j < x; j++)
@@ -17,6 +17,24 @@ void search(int arr[], int x)
     if (j == x)
     {
         cout << "Element not found" << endl;
+    }
+  
+    cout << "Unique elements: ";
+    for (i = 0; i < x; i++)
+    {
+        bool unique = true;
+        for (j = 0; j < x; j++)
+        {
+            if (i != j && arr[i] == arr[j])
+            {
+                unique = false;
+                break;
+            }
+        }
+        if (unique == true)
+        {
+            cout << arr[i] << " ";
+        }
     }
 }
 int main()
